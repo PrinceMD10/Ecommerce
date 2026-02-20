@@ -14,7 +14,7 @@ export default function App() {
   const [cartOpen, setCartOpen] = useState(false);
 
   // Hook produits (filtre/tri)
-  const filters = useProducts(); // { filtered, query, setQuery, category, ... }
+  const filters = useProducts(); // { products, query, setQuery, category, ... }
 
   // Hook notification
   const { notification, notify, dismiss } = useNotification();
@@ -26,29 +26,22 @@ export default function App() {
 
   return (
     <CartProvider>
-      {/* Header */}
       <Header onCartOpen={() => setCartOpen(true)} />
 
-      {/* Main content */}
       <main>
-        {/* Hero */}
         <Hero onShopClick={scrollToCollection} />
 
-        {/* ProductGrid */}
         <ProductGrid
-          products={filters?.filtered || []}
+          products={filters?.products || []}
           filters={filters || {}}
           onNotify={notify}
         />
       </main>
 
-      {/* Footer */}
       <Footer />
 
-      {/* Cart Panel */}
       <CartPanel isOpen={cartOpen} onClose={() => setCartOpen(false)} />
 
-      {/* Toast notifications */}
       <Toast notification={notification} onDismiss={dismiss} />
     </CartProvider>
   );
