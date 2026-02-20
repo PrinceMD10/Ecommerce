@@ -1,4 +1,4 @@
-const CSS = `
+
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap');
 
   :root {
@@ -180,4 +180,4 @@ const CSS = `
     .ftr-in{flex-direction:column;gap:20px;text-align:center}
     .ftr-copy{flex-direction:column;gap:8px;text-align:center}
   }
-`;
+;

@@ -1,9 +1,17 @@
+import { useRef } from "react";
+import { useCart } from "../../context/CartContext";
+import { useClickOutside } from "../../hooks/useClickOutside";
+import { FREE_SHIPPING } from "../../data/products";
+import CartItem from "./CartItem";
+
 function CartPanel({ isOpen, onClose }) {
   const { items, totalItems, totalPrice, clearCart } = useCart();
   const ref = useRef(null);
-  useClickOutside(ref, ()=>{ if(isOpen) onClose(); });
+  useClickOutside(ref, () => {
+    if (isOpen) onClose();
+  });
   const remaining = Math.max(0, FREE_SHIPPING - totalPrice);
-  const progress  = Math.min(100, (totalPrice/FREE_SHIPPING)*100);
+  const progress = Math.min(100, (totalPrice / FREE_SHIPPING) * 100);
   return (
     <>
       <div className={`backdrop ${isOpen?"on":""}`} aria-hidden="true"/>
@@ -56,3 +64,5 @@ function CartPanel({ isOpen, onClose }) {
     </>
   );
 }
+
+export default CartPanel;

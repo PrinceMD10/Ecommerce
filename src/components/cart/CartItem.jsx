@@ -1,3 +1,5 @@
+import { useCart } from "../../context/CartContext";
+
 function CartItem({ item }) {
   const { updateQty, removeItem } = useCart();
   return (
@@ -19,3 +21,5 @@ function CartItem({ item }) {
     </li>
   );
 }
+
+export default CartItem;

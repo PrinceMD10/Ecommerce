@@ -1,5 +1,4 @@
-import { useState, useReducer, useCallback, useContext, createContext, useRef, useEffect, useMemo } from "react";
-const PRODUCTS = [
+export const PRODUCTS = [
   { id:1,  name:"Veste Minimaliste", price:89,  category:"Vestes",      emoji:"🧥", description:"Coupe ajustée, finitions impeccables",      badge:"Nouveau",      stock:8  },
   { id:2,  name:"T-Shirt Premium",   price:30,  category:"Hauts",        emoji:"👕", description:"100% coton peigné, douceur absolue",        badge:null,           stock:24 },
   { id:3,  name:"Pantalon Chino",    price:65,  category:"Pantalons",    emoji:"👖", description:"Coupe droite moderne, matière stretch",     badge:null,           stock:12 },
@@ -13,12 +12,12 @@ const PRODUCTS = [
   { id:11, name:"Bonnet Côtelé",     price:25,  category:"Accessoires",  emoji:"🧢", description:"Côtes larges, laine douce",                 badge:null,           stock:30 },
   { id:12, name:"Ceinture Cuir",     price:60,  category:"Accessoires",  emoji:"👜", description:"Pleine fleur, boucle argentée",             badge:null,           stock:11 },
 ];
-const CATEGORIES = ["Tous", ...new Set(PRODUCTS.map(p => p.category))];
-const SORT_OPTIONS = [
+export const CATEGORIES = ["Tous", ...new Set(PRODUCTS.map(p => p.category))];
+export const SORT_OPTIONS = [
   { value:"default",    label:"Par défaut"     },
   { value:"price-asc",  label:"Prix croissant" },
   { value:"price-desc", label:"Prix décroissant"},
   { value:"name-asc",   label:"Nom A → Z"      },
   { value:"name-desc",  label:"Nom Z → A"      },
 ];
-const FREE_SHIPPING = 150;
+export const FREE_SHIPPING = 150;
